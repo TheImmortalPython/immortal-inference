@@ -4,12 +4,13 @@
   <p><h1>immortal-inference:<br>Non-Stochastic AI Determinism & Logit Containment Engine</h1></p>
 
   <p>
-    <a href="https://github.com/TheImmortalPython/immortal-inference/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-AGPLv3-blue.svg" alt="License: AGPLv3"></a>
-    <a href="https://github.com/TheImmortalPython/immortal-inference/blob/main/CONTRIBUTING.md"><img src="https://img.shields.io/badge/CLA-Enforced-blue.svg" alt="CLA Enforced"></a>
-    <img src="https://img.shields.io/badge/python-3.10%2B-blue.svg" alt="Python Version">
-    <a href="https://github.com/TheImmortalPython/immortal-inference/stargazers">
-      <img src="https://img.shields.io/github/stars/TheImmortalPython/immortal-inference?style=social" alt="GitHub Stars">
-    </a>
+  <a href="https://github.com/TheImmortalPython/immortal-inference/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-AGPLv3-blue.svg" alt="License: AGPLv3"></a>
+<a href="https://github.com/TheImmortalPython/immortal-inference/actions/workflows/ci.yml"><img src="https://github.com/TheImmortalPython/immortal-inference/actions/workflows/ci.yml/badge.svg" alt="CI Status"></a>
+<a href="https://github.com/TheImmortalPython/immortal-inference/blob/main/CONTRIBUTING.md"><img src="https://img.shields.io/badge/CLA-Enforced-blue.svg" alt="CLA Enforced"></a>
+<img src="https://img.shields.io/badge/python-3.10%2B-blue.svg" alt="Python Version">
+<a href="https://github.com/TheImmortalPython/immortal-inference/stargazers">
+  <img src="https://img.shields.io/github/stars/TheImmortalPython/immortal-inference?style=social" alt="GitHub Stars">
+</a>
   </p>
   
   <p><em>Developed by Joshua St. Germain | TheImmortalPython Labs</em></p>
