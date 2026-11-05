@@ -42,7 +42,7 @@ By intercepting Hugging Face `LogitsProcessor` pipelines and PyTorch matrix oper
 ```
 
 immortal-inference/
-├── .github/workflows/     # CI/CD pipelines & CLA assistant automation
+├── .github/workflows/     # CI automation & CLA assistant automation
 ├── benchmarks/            # Logit logging and performance evaluation benchmarks
 ├── docs/                  # Technical whitepaper & architectural specifications
 ├── examples/              # Quickstart notebooks & implementation examples
