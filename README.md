@@ -33,9 +33,9 @@ By intercepting Hugging Face `LogitsProcessor` pipelines and PyTorch matrix oper
 
 ## 2. Core Architecture
 
-* **Pāṇinian Kāraka Logit Masking:** Maps linguistic dependency structures into mathematical matrices to enforce structural compliance at token step $t+1$.
-* **Tensor-Topology Constraint Calculus:** Evaluates the token vocabulary space across a constrained topological subspace, setting non-compliant logits to $-\infty$.
-* **Deterministic Execution:** Guarantees absolute structural compliance without output drift, hallucination, or syntax violations.
+- **Pāṇinian Kāraka Logit Masking:** Maps linguistic dependency structures into mathematical matrices to enforce structural compliance at token step $t+1$.
+- **Tensor-Topology Constraint Calculus:** Evaluates the token vocabulary space across a constrained topological subspace, setting non-compliant logits to $-\infty$.
+- **Deterministic Execution:** Guarantees absolute structural compliance without output drift, hallucination, or syntax violations.
 
 ## 3. Directory Structure
 
@@ -78,7 +78,11 @@ Any entity hosting, wrapping, or exposing the capabilities of `immortal-inferenc
 All community contributions to `immortal-inference` require a signed Contributor License Agreement (CLA). Upon submitting a Pull Request, you will be prompted automatically by our workflow to authorize the agreement. See `CONTRIBUTING.md` for full guidelines.
 
 ### Commercial Licensing
-To utilize `immortal-inference` in proprietary, closed-source, or SaaS environments without AGPLv3 copyleft obligations, you must acquire a commercial license. Refer to `LICENSE-COMMERCIAL.md` and `PRICING-TIERS.md` for terms.
+To utilize `immortal-inference` in proprietary, closed-source, or SaaS environments without AGPLv3 copyleft obligations, you must acquire a commercial license. Refer to `LICENSE-COMMERCIAL.md` and `PRICING-TIERS.md` for terms. 
+
+---
+
+*Note: All software assets, source code repositories, and commercial licenses are offered strictly on an **as-is** basis as self-service intellectual property acquisitions. Transactions convey rights to the technology asset and codebase only; they do not include ongoing consulting services, custom engineering implementations, software-level support desks, or managed engineering deployments.*
 
 ---
 
