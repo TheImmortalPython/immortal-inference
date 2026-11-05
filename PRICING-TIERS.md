@@ -35,4 +35,4 @@ This document outlines the commercial pricing tiers for immortal-inference. Beca
 Commercial licensees operating under Tiers 3 and 4 agree to provide annual certified self-reporting of gross revenue and total deployment scale upon request to maintain compliance under commercial exception agreements.
 
 ## 4. Execution
-To secure a commercial exception license or negotiate a custom enterprise site agreement, organizational legal and procurement departments must contact the commercial licensing desk directly at: theimmortalpythonlabs@proton.me
+To secure a commercial exception license or negotiate a custom enterprise site agreement, organizational legal and procurement departments, contact: theimmortalpythonlabs@proton.me
