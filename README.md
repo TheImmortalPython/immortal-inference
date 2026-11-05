@@ -1,4 +1,3 @@
-
 <div align="center">
   <img src="./TIP_Logo_Square.jpg" width="150" alt="TIP Logo">
   
@@ -6,7 +5,7 @@
 
   <p>
     <a href="https://github.com/TheImmortalPython/immortal-inference/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-AGPLv3-blue.svg" alt="License: AGPLv3"></a>
-    <a href="https://github.com/TheImmortalPython/immortal-inference/actions"><img src="https://github.com/TheImmortalPython/immortal-inference/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI Status"></a>
+    <a href="https://github.com/TheImmortalPython/immortal-inference/actions"><img src="https://github.com/TheImmortalPython/immortal-inference/actions/workflows/cla.yml/badge.svg?branch=main" alt="CI Status"></a>
     <img src="https://img.shields.io/badge/python-3.10%2B-blue.svg" alt="Python Version">
     <a href="https://github.com/TheImmortalPython/immortal-inference/stargazers">
       <img src="https://img.shields.io/github/stars/TheImmortalPython/immortal-inference?style=social" alt="GitHub Stars">
