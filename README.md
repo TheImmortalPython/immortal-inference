@@ -43,15 +43,22 @@ By intercepting Hugging Face `LogitsProcessor` pipelines and PyTorch matrix oper
 ```
 
 immortal-inference/
+├── .github/workflows/     # CI/CD pipelines & CLA assistant automation
+├── benchmarks/            # Logit logging and performance evaluation benchmarks
+├── docs/                  # Technical whitepaper & architectural specifications
+├── examples/              # Quickstart notebooks & implementation examples
 ├── pklm/                  # Core logit processor & PyTorch masking implementation
-├── docs/                  # Defensive prior art & architectural specifications
-├── examples/              # Example execution scripts
-├── README.md              # Project overview, architecture, and Section 13 notice
-├── CONTRIBUTING.md        # Contributor guidelines and CLA agreement workflow
+├── signatures/            # Contributor License Agreement (CLA) signature registry
+├── tests/                 # Unit & integration verification test suites
+├── CONTRIBUTING.md        # Contributor guidelines and CLA workflow
 ├── LICENSE                # GNU Affero General Public License v3.0 (AGPLv3)
 ├── LICENSE-COMMERCIAL.md  # Commercial License Exception & AGPLv3 Waiver
+├── PRICING-TIERS.md       # Enterprise Commercial Pricing & Licensing Tiers
+├── README.md              # Project overview, architecture, & Section 13 notice
+├── SECURITY.md            # Security policy & vulnerability reporting guidelines
 ├── SOVEREIGN_EXCEPTION.md # Public Sector & Critical Infrastructure Safe Harbor
-└── PRICING-TIERS.md       # Enterprise Commercial Pricing & Licensing Tiers
+├── TIP_Logo_Square.jpg    # Enterprise brand logo asset
+└── setup.py               # Standard setuptools installation & metadata script
 
 ```
 
