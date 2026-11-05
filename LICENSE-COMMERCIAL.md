@@ -21,7 +21,7 @@ Commercial usage rights are structured into the following tiers based on organiz
 * **Enterprise License:** For organizations exceeding small-business revenue thresholds. Grants unlimited production deployment across multi-cloud environments, API gateways, and internal microservices.
 * **Unlimited Global Site License:** Enterprise-wide perpetual license ($1,000,000+ USD single buyout) granting global, unrestricted software distribution and proprietary cloud/on-premise deployment.
 
-For custom pricing, self-service commercial billing, or custom contract execution, contact corporate licensing: theimmortalpythonlabs@proton.me
+For custom pricing, self-service commercial billing, or custom contract execution, contact: theimmortalpythonlabs@proton.me
 
 ## 4. Absolute "As-Is" Liability and Warranty Disclaimer
 
