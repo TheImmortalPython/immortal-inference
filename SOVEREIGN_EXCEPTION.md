@@ -29,7 +29,7 @@ their surrounding infrastructure, application code, or weights under Section 13 
 
 ## 5. Application and Activation
 To activate this Sovereign Exception and receive an official signed corporate certificate of 
-compliance for your department's legal records, please contact our public sector compliance desk: theimmortalpythonlabs@proton.me
+compliance for your department's legal records, contact: theimmortalpythonlabs@proton.me
 
 ## 6. Geopolitical Compliance & Export Control Restrictions
 This Sovereign Exception strictly DOES NOT apply to, and explicitly revokes 
