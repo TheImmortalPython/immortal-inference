@@ -86,4 +86,10 @@ To utilize `immortal-inference` in proprietary, closed-source, or SaaS environme
 
 ---
 
+### Monetizing immortal-inference (and Non-Stochastic AI)
+
+To explore how to monetize `immortal-inference`, read [The Monetization Playbook](https://theimmortalpython.hashnode.dev/the-monetization-playbook-for-immortal-inference-and-non-stochastic-ai).
+
+---
+
 *© TheImmortalPython Labs. All rights reserved.*
