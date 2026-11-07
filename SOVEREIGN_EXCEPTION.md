@@ -4,7 +4,7 @@
 ## 1. Purpose and Intent
 This Exception is established to protect and secure national critical infrastructure, 
 public research, and democratic governance systems. It provides a legal "Safe Harbor" 
-for qualifying Public Sector Entities to utilize, modify, and host pklm-core within 
+for qualifying Public Sector Entities to utilize, modify, and host immortal-inference within 
 private or secure networks without triggering the viral source-code disclosure 
 obligations mandated under Section 13 of the GNU Affero General Public License v3 (AGPLv3).
 
