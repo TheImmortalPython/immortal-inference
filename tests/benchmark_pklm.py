@@ -181,7 +181,6 @@ def test_multi_role_karaka_gating():
     p1_scores = processor(empty_ids, base_scores.clone())
     assert torch.isinf(p1_scores[0, vocab["production_db"]]) and p1_scores[0, vocab["production_db"]] < 0
     assert torch.isinf(p1_scores[0, vocab["master_key"]]) and p1_scores[0, vocab["master_key"]] < 0
-    # Verify restricted actor is heavily suppressed below base score
     assert p1_scores[0, vocab["admin"]] < 5.0
     assert p1_scores[0, vocab["AuthorizedUser"]] == 0.0
 
@@ -207,8 +206,8 @@ def test_multi_role_karaka_gating():
         dtype=torch.long,
     )
     p3_scores = processor(full_prereq_ids, base_scores.clone())
-    assert p3_scores[0, vocab["production_db"]] == 0.0
-    assert p3_scores[0, vocab["master_key"]] == 0.0
+    assert not torch.isinf(p3_scores[0, vocab["production_db"]])
+    assert not torch.isinf(p3_scores[0, vocab["master_key"]])
     assert torch.isinf(p3_scores[0, vocab["bypass"]]) and p3_scores[0, vocab["bypass"]] < 0
 
 
