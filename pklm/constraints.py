@@ -47,7 +47,7 @@ class PaninianKarakaLogitsProcessor(LogitsProcessor):
     Features:
       1. Pre-indexed boolean PyTorch tensor masks for vectorized GPU masked_fill_ execution.
       2. Rolling sub-word tail buffer to block split-token bypasses (e.g., "adm" + "in").
-      3. Incremental clause-level spaCy parsing with state caching.
+      3. Incremental clause-level spaCy parsing with deterministic lexical fallback.
     """
     def __init__(self, constraints: LatticeConstraints, tokenizer_vocab: Dict[str, int]):
         self.constraints = constraints
@@ -127,30 +127,48 @@ class PaninianKarakaLogitsProcessor(LogitsProcessor):
         return text[last_boundary:].strip()
 
     def _update_lattice_state(self, recent_text: str) -> None:
-        """Parses only the active clause boundary to update Karaka slots incrementally."""
-        if not nlp or not recent_text:
+        """
+        Parses only the active clause boundary to update Karaka slots incrementally.
+        Uses spaCy dependency parsing when available, with a deterministic lexical
+        fallback if the spaCy model is not installed in the runtime environment.
+        """
+        if not recent_text:
             return
 
-        # Reset active slots when a new sentence/clause begins
+        # Always track clause boundaries and reset active slots across sentences
         boundary_count = len(CLAUSE_BOUNDARY_RE.findall(recent_text))
         if boundary_count != self._last_clause_index:
             self._last_clause_index = boundary_count
             self.active_slots = {"kartā": None, "adhikaraṇa": None, "karma": None}
+            self._last_parsed_clause = ""
 
         active_clause = self._extract_active_clause(recent_text)
         if not active_clause or active_clause == self._last_parsed_clause:
             return
 
         self._last_parsed_clause = active_clause
-        doc = nlp(active_clause)
-        for token in doc:
-            tok_lower = token.text.lower()
-            if token.dep_ == "nsubj" and tok_lower == self.constraints.kartā:
-                self.active_slots["kartā"] = token.text
-            elif token.dep_ in ("pobj", "prep") and tok_lower == self.constraints.adhikaraṇa:
-                self.active_slots["adhikaraṇa"] = token.text
-            elif token.dep_ == "dobj" and self.constraints.karma and tok_lower == self.constraints.karma:
-                self.active_slots["karma"] = token.text
+
+        if nlp is not None:
+            doc = nlp(active_clause)
+            for token in doc:
+                tok_lower = token.text.lower()
+                if token.dep_ == "nsubj" and tok_lower == self.constraints.kartā:
+                    self.active_slots["kartā"] = token.text
+                elif token.dep_ in ("pobj", "prep") and tok_lower == self.constraints.adhikaraṇa:
+                    self.active_slots["adhikaraṇa"] = token.text
+                elif token.dep_ == "dobj" and self.constraints.karma and tok_lower == self.constraints.karma:
+                    self.active_slots["karma"] = token.text
+        else:
+            # Deterministic lexical fallback when en_core_web_sm is unavailable
+            words = re.findall(r"[a-zA-Z0-9_]+", active_clause)
+            for word in words:
+                w_lower = word.lower()
+                if w_lower == self.constraints.kartā:
+                    self.active_slots["kartā"] = word
+                elif w_lower == self.constraints.adhikaraṇa:
+                    self.active_slots["adhikaraṇa"] = word
+                elif self.constraints.karma and w_lower == self.constraints.karma:
+                    self.active_slots["karma"] = word
 
     def _get_valid_next_roles(self) -> Set[str]:
         if not self.active_slots["kartā"]:
@@ -162,7 +180,10 @@ class PaninianKarakaLogitsProcessor(LogitsProcessor):
             return ""
         parts = re.split(r"[\s.!?;:\n\"'()\[\]{}]+", recent_text)
         tail = parts[-1].lower() if parts else ""
-        return tail[-self._max_protected_len :] if self._max_protected_len > 0 else ""
+        if self._max_protected_len <= 0:
+            return ""
+        start_idx = max(0, len(tail) - self._max_protected_len)
+        return tail[start_idx:]
 
     def _get_dynamic_subword_mask(
         self, tail: str, block_karta_roles: bool, device: torch.device
@@ -210,17 +231,16 @@ class PaninianKarakaLogitsProcessor(LogitsProcessor):
         self._update_lattice_state(recent_text)
         permissible_roles = self._get_valid_next_roles()
         block_karta_roles = "kartā" not in permissible_roles
-
+       
         # 2. Apply pre-indexed static boolean tensor masks in vectorized GPU ops
-        active_mask = self._global_block_mask[:vocab_dim]
+        active_mask = self._global_block_mask.narrow(0, 0, vocab_dim)
         if block_karta_roles:
-            active_mask = active_mask | self._karta_block_mask[:vocab_dim]
-
+        active_mask = active_mask | self._karta_block_mask.narrow(0, 0, vocab_dim)
+            
         # 3. Check rolling sub-word tail buffer only when trailing chars match a protected prefix
         tail = self._get_trailing_word_fragment(recent_text)
         dyn_mask = self._get_dynamic_subword_mask(tail, block_karta_roles, scores.device)
         if dyn_mask is not None:
-            active_mask = active_mask | dyn_mask[:vocab_dim]
-
+        active_mask = active_mask | dyn_mask.narrow(0, 0, vocab_dim)
         scores.masked_fill_(active_mask.unsqueeze(0), float("-inf"))
         return scores
