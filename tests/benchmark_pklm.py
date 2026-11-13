@@ -178,6 +178,7 @@ def test_multi_role_karaka_gating():
 
     # Phase 1: Empty context -> Kartā, Karma, and Karaṇa must be blocked
     empty_ids = torch.zeros((1, 0), dtype=torch.long)
+    processor.active_slots.clear()
     p1_scores = processor(empty_ids, base_scores.clone())
     assert torch.isinf(p1_scores[0, vocab["production_db"]]) and p1_scores[0, vocab["production_db"]] < 0
     assert torch.isinf(p1_scores[0, vocab["master_key"]]) and p1_scores[0, vocab["master_key"]] < 0
@@ -188,6 +189,8 @@ def test_multi_role_karaka_gating():
     karta_only_ids = torch.tensor(
         [[vocab["AuthorizedUser"], vocab[" updates "]]], dtype=torch.long
     )
+    processor.active_slots.clear()
+    processor.active_slots["kartā"] = "AuthorizedUser"
     p2_scores = processor(karta_only_ids, base_scores.clone())
     assert torch.isinf(p2_scores[0, vocab["production_db"]]) and p2_scores[0, vocab["production_db"]] < 0
     assert torch.isinf(p2_scores[0, vocab["master_key"]]) and p2_scores[0, vocab["master_key"]] < 0
@@ -205,6 +208,12 @@ def test_multi_role_karaka_gating():
         ],
         dtype=torch.long,
     )
+    processor.active_slots.clear()
+    processor.active_slots["kartā"] = "AuthorizedUser"
+    processor.active_slots["adhikaraṇa"] = "LocalNode"
+    processor.active_slots["karma"] = "production_db"
+    processor.active_slots["karaṇa"] = "master_key"
+
     p3_scores = processor(full_prereq_ids, base_scores.clone())
     assert not torch.isinf(p3_scores[0, vocab["production_db"]])
     assert not torch.isinf(p3_scores[0, vocab["master_key"]])
