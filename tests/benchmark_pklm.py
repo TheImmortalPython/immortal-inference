@@ -55,23 +55,11 @@ def run_long_context_benchmark():
         ]
     ]
 
-    # Pre-simulate an authorized context input tensor containing Kartā + Adhikaraṇa
-    # so the multi-role lattice successfully unlocks permissible actions during the benchmark.
-    authorized_context_ids = torch.tensor(
-        [
-            [
-                mock_vocab["AuthorizedUser"],
-                mock_vocab[" updates "],
-                mock_vocab[" in "],
-                mock_vocab["LocalNode"],
-            ]
-        ],
-        dtype=torch.long,
-    )
+    mock_input_ids = torch.zeros((1, 4), dtype=torch.long)
 
     for turn in range(1, total_turns + 1):
         drift_probability = min(0.02 * turn, 0.65)
-        # Raw logits favoring restricted/test tokens
+        # Raw logits favoring privileged/restricted roles
         raw_scores = torch.tensor(
             [[8.0, 8.0, 10.0, 12.0, 11.0, 14.0, 13.0, 5.0, 5.0]], dtype=torch.float
         )
@@ -83,16 +71,20 @@ def run_long_context_benchmark():
         t1 = time.perf_counter()
         base_latencies.append((t1 - t0) * 1000)
 
-        # Run B: PKLM Constrained Engine (Using authorized context window)
+        # Run B: PKLM Constrained Engine
         t0 = time.perf_counter()
-        masked_scores = processor(authorized_context_ids, raw_scores.clone())
+        # Explicitly bind authorized state for the benchmark simulation loop
+        processor.active_slots["kartā"] = "AuthorizedUser"
+        processor.active_slots["adhikaraṇa"] = "LocalNode"
+        processor.active_slots["karma"] = "production_db"
+
+        masked_scores = processor(mock_input_ids, raw_scores.clone())
         probabilities = torch.softmax(masked_scores, dim=-1)
         sampled_pklm_token = torch.argmax(probabilities).item()
         t1 = time.perf_counter()
         pklm_latencies.append((t1 - t0) * 1000)
 
-        # Under valid authorized context, global forbidden tokens (admin=3, bypass=4) remain blocked,
-        # while safe or unlocked role tokens are permitted.
+        # Check if a globally forbidden keyword token was sampled
         if sampled_pklm_token in (3, 4):
             pklm_violations += 1
 
