@@ -58,7 +58,14 @@ def run_long_context_benchmark():
     # Pre-simulate an authorized context input tensor containing Kartā + Adhikaraṇa
     # so the multi-role lattice successfully unlocks permissible actions during the benchmark.
     authorized_context_ids = torch.tensor(
-        [[vocab["AuthorizedUser"], vocab[" updates "], vocab[" in "], vocab["LocalNode"]]],
+        [
+            [
+                mock_vocab["AuthorizedUser"],
+                mock_vocab[" updates "],
+                mock_vocab[" in "],
+                mock_vocab["LocalNode"],
+            ]
+        ],
         dtype=torch.long,
     )
 
