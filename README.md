@@ -65,7 +65,7 @@ immortal-inference/
 ├── CONTRIBUTING.md        # Contributor guidelines and CLA workflow
 ├── LICENSE                # GNU Affero General Public License v3.0 (AGPLv3)
 ├── LICENSE-COMMERCIAL.md  # Commercial License Exception & AGPLv3 Waiver
-├── PKLM_10k_Horizon_Benchmark_Data.csv # 10k-token long-horizon benchmark telemetry dataset
+├── PKLM_10k_Horizon_B...  # 10k-token long-horizon benchmark telemetry dataset
 ├── PRICING-TIERS.md       # Enterprise Commercial Pricing & Licensing Tiers
 ├── README.md              # Project overview, architecture, & Section 13 notice
 ├── SECURITY.md            # Security policy & vulnerability reporting guidelines
