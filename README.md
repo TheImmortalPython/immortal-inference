@@ -62,6 +62,7 @@ immortal-inference/
 ├── pklm/                  # Core logit processor & PyTorch masking implementation
 ├── signatures/            # Contributor License Agreement (CLA) signature registry
 ├── tests/                 # Unit & integration verification test suites
+├── .gitignore             # Git ignore rules
 ├── CONTRIBUTING.md        # Contributor guidelines and CLA workflow
 ├── LICENSE                # GNU Affero General Public License v3.0 (AGPLv3)
 ├── LICENSE-COMMERCIAL.md  # Commercial License Exception & AGPLv3 Waiver
