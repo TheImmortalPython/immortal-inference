@@ -57,7 +57,7 @@ The `immortal-inference` engine enforces strict token-level determinism using P�
 
 immortal-inference/
 ├── .github/workflows/     # CI automation & CLA assistant automation
-├── docs/                  # Technical whitepaper & architectural specifications
+├── docs/                  # Documents
 ├── examples/              # Quickstart notebooks & implementation examples
 ├── pklm/                  # Core logit processor & PyTorch masking implementation
 ├── signatures/            # Contributor License Agreement (CLA) signature registry
