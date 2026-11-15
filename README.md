@@ -3,17 +3,23 @@
   
   <p><h1>immortal-inference:<br>Non-Stochastic AI Determinism & Logit Containment Engine</h1></p>
 
-  <p>
+<p><em>Developed by Joshua St. Germain | TheImmortalPython Labs</em></p>
+
+---
+
+<p>
 <a href="https://github.com/TheImmortalPython/immortal-inference/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-AGPLv3-blue.svg" alt="License: AGPLv3"></a>
+<a href="https://github.com/TheImmortalPython/immortal-inference/blob/main/LICENSE-COMMERCIAL.md"><img src="https://img.shields.io/badge/license-Commercial-green.svg" alt="License: Commercial"></a>
 <a href="https://github.com/TheImmortalPython/immortal-inference/actions/workflows/ci.yml"><img src="https://img.shields.io/badge/CI-Passing-brightgreen.svg" alt="CI Status"></a>
 <a href="https://github.com/TheImmortalPython/immortal-inference/blob/main/CONTRIBUTING.md"><img src="https://img.shields.io/badge/CLA-Enforced-blue.svg" alt="CLA Enforced"></a>
 <img src="https://img.shields.io/badge/python-3.10%2B-blue.svg" alt="Python Version">
 <a href="https://github.com/TheImmortalPython/immortal-inference/stargazers">
   <img src="https://img.shields.io/github/stars/TheImmortalPython/immortal-inference?style=social" alt="GitHub Stars">
 </a>
-  </p>
+</p>
   
-  <p><em>Developed by Joshua St. Germain | TheImmortalPython Labs</em></p>
+Dual-licensed under **AGPLv3** (open-source) and **Commercial Terms** (proprietary/SaaS). See [Section 5](https://github.com/TheImmortalPython/immortal-inference#5-licensing-author-intent-community-contributions--commercial-licensing).
+  
 </div>
 
 ---
@@ -77,7 +83,7 @@ immortal-inference/
 
 ## 5. Licensing, Author Intent, Community Contributions & Commercial Licensing
 
-This software is released under the **GNU Affero General Public License v3.0 (AGPLv3)**.
+This software is **dual-licensed**, released under the **GNU Affero General Public License v3.0 (AGPLv3)** for open-source use, with **Commercial Licenses** available for proprietary deployment.
 
 ### Standard Open-Source Licensing
 Under the AGPLv3, you are free to inspect, modify, and redistribute `immortal-inference` provided that all modifications and derivative works remain open-source under the same terms.
