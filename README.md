@@ -20,14 +20,13 @@
 
 ## 1. Overview
 
-`immortal-inference` is a high-performance, non-stochastic constraint engine engineered to enforce zero-drift linguistic containment and deterministic execution guarantees over generative Large Language Models (LLMs).
+`immortal-inference` is a high-performance, non-stochastic constraint engine engineered to enforce zero-drift linguistic containment and deterministic execution guarantees over generative autoregressive models.
 
 By intercepting Hugging Face `LogitsProcessor` pipelines and PyTorch matrix operations in real time, the engine applies dynamic binary distribution masks prior to final token sampling.
 
-
 ```
 
-[ Prompt Context ] ---> [ Logit Interception ] ---> [ Pāṇinian Kāraka Mask ] ---> [ Guaranteed Output ]
+[ Context Input ] ---> [ Model Forward Pass ] ---> [ Pāṇinian Kāraka Mask ] ---> [ Guaranteed Output ]
 
 ```
 
