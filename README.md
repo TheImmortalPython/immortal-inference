@@ -14,7 +14,7 @@
 <a href="https://github.com/TheImmortalPython/immortal-inference/blob/main/CONTRIBUTING.md"><img src="https://img.shields.io/badge/CLA-Enforced-blue.svg" alt="CLA Enforced"></a>
 <img src="https://img.shields.io/badge/python-3.10%2B-blue.svg" alt="Python Version">
 <a href="https://github.com/TheImmortalPython/immortal-inference/stargazers">
-  <img src="https://img.shields.io/github/stars/TheImmortalPython/immortal-inference?style=social" alt="GitHub Stars">
+ <img src="https://img.shields.io/github/stars/TheImmortalPython/immortal-inference">
 </a>
 </p>
   
