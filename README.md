@@ -105,14 +105,6 @@ To utilize `immortal-inference` in proprietary, closed-source, or SaaS environme
 
 ---
 
-## Developer Adoption & Repository Traction
-
-Active developer clone velocity and unique cloner engagement across `immortal-inference` as of **November 17, 2026**:
-
-![Developer Adoption & Repository Traction](docs/metrics/git-clones-2026-11-17.png)
-
----
-
 ### Monetizing immortal-inference (and Non-Stochastic AI)
 
 To explore how to monetize `immortal-inference`, read [The Monetization Playbook](https://theimmortalpython.hashnode.dev/the-monetization-playbook-for-immortal-inference-and-non-stochastic-ai).
