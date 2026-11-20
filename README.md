@@ -18,7 +18,7 @@
 </a>
 </p>
   
-Dual-licensed under **AGPLv3** (open-source) and **Commercial Terms** (proprietary/SaaS). See [Section 5](https://github.com/TheImmortalPython/immortal-inference#5-licensing-author-intent-community-contributions--commercial-licensing).
+Dual-licensed under **AGPLv3** and **Commercial Terms**. See [Section 5](https://github.com/TheImmortalPython/immortal-inference#5-licensing-author-intent-community-contributions--commercial-licensing).
   
 </div>
 
