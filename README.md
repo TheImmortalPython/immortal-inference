@@ -113,7 +113,7 @@ To explore how to monetize `immortal-inference`, read [The Monetization Playbook
 
 > **Founder & Principal AI Architect:** Joshua St. Germain  
 > **Enterprise Governance & IP Incubator:** TheImmortalPython Labs ([theimmortalpythonlabs@proton.me](mailto:theimmortalpythonlabs@proton.me))  
-> **Repositories:** `immortal-inference` | [`the-nsai-guide`](https://github.com/TheImmortalPython/the-nsai-guide)
+> **Repositories:** `immortal-inference` | [`stricta-agent`](https://github.com/TheImmortalPython/stricta-agent) | [`the-nsai-guide`](https://github.com/TheImmortalPython/the-nsai-guide)
 
 ---
 
