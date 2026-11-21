@@ -55,7 +55,7 @@ The `immortal-inference` engine enforces strict token-level determinism using PÄ
 
 *Raw telemetry data supporting these metrics is available in [`PKLM_10k_Horizon_Benchmark_Data.csv`](./PKLM_10k_Horizon_Benchmark_Data.csv).*
 
-## 4. Directory Structure
+## 4. Repository Layout
 
 
 ```
