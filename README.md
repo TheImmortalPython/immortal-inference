@@ -18,13 +18,13 @@
 </a>
 </p>
   
-Dual-licensed under **AGPLv3** and **Commercial Terms**. See [Section 5](https://github.com/TheImmortalPython/immortal-inference#5-licensing-author-intent-community-contributions--commercial-licensing).
+Dual-licensed under **AGPLv3** and **Commercial Terms**.
   
 </div>
 
 ---
 
-## 1. Overview
+## Overview
 
 `immortal-inference` is a high-performance, non-stochastic constraint engine engineered to enforce zero-drift linguistic containment and deterministic execution guarantees over generative autoregressive models.
 
@@ -36,13 +36,13 @@ By intercepting Hugging Face `LogitsProcessor` pipelines and PyTorch matrix oper
 
 ```
 
-## 2. Core Architecture
+## Core Architecture
 
 - **Pāṇinian Kāraka Logit Masking:** Maps linguistic dependency structures into mathematical matrices to enforce structural compliance at token step $t+1$.
 - **Tensor-Topology Constraint Calculus:** Evaluates the token vocabulary space across a constrained topological subspace, setting non-compliant logits to $-\infty$.
 - **Deterministic Execution:** Guarantees absolute structural compliance without output drift, hallucination, or syntax violations.
 
-## 3. Performance & Benchmarks
+## Performance & Benchmarks
 
 The `immortal-inference` engine enforces strict token-level determinism using Pāṇinian Kāraka dependency lattices. Long-horizon evaluations over a 10,000-token test horizon demonstrate zero syntactic drift or containment violations.
 
@@ -55,7 +55,7 @@ The `immortal-inference` engine enforces strict token-level determinism using P�
 
 *Raw telemetry data supporting these metrics is available in [`PKLM_10k_Horizon_Benchmark_Data.csv`](./PKLM_10k_Horizon_Benchmark_Data.csv).*
 
-## 4. Repository Layout
+## Repository Layout
 
 
 ```
@@ -76,12 +76,12 @@ immortal-inference/
 ├── README.md              # Project overview, architecture, & Section 13 notice
 ├── SECURITY.md            # Security policy & vulnerability reporting guidelines
 ├── SOVEREIGN_EXCEPTION.md # Public Sector & Critical Infrastructure Safe Harbor
-├── TIP_Logo_Square.jpg    # Enterprise brand logo asset
+├── TIP_Logo_Square.jpg    # TheImmortalPython Labs logo
 └── setup.py               # Standard setuptools installation & metadata script
 
 ```
 
-## 5. Licensing, Author Intent, Community Contributions & Commercial Licensing
+## Licensing, Author Intent, Community Contributions & Commercial Licensing
 
 This software is **dual-licensed**, released under the **GNU Affero General Public License v3.0 (AGPLv3)** for open-source use, with **Commercial Licenses** available for proprietary deployment.
 
