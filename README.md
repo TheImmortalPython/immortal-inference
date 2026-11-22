@@ -42,7 +42,7 @@ By intercepting Hugging Face `LogitsProcessor` pipelines and PyTorch matrix oper
 - **Tensor-Topology Constraint Calculus:** Evaluates the token vocabulary space across a constrained topological subspace, setting non-compliant logits to $-\infty$.
 - **Deterministic Execution:** Guarantees absolute structural compliance without output drift, hallucination, or syntax violations.
 
-## Performance & Benchmarks
+# Performance & Benchmarks
 
 The `immortal-inference` engine enforces strict token-level determinism using Pāṇinian Kāraka dependency lattices. Long-horizon evaluations over a 10,000-token test horizon demonstrate zero syntactic drift or containment violations.
 
