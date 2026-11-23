@@ -44,7 +44,15 @@ By intercepting Hugging Face `LogitsProcessor` pipelines and PyTorch matrix oper
 
 ### Performance & Benchmarks
 
-The `immortal-inference` engine enforces strict token-level determinism using Pāṇinian Kāraka dependency lattices. Long-horizon evaluations over a 10,000-token test horizon demonstrate zero syntactic drift or containment violations.
+The `immortal-inference` engine enforces strict token-level determinism using Pāṇinian Kāraka dependency lattices.
+
+#### C++ Benchmark
+
+(C++ is currently in development; benchmark will be posted upon completion.)
+
+#### Python Benchmark
+
+Long-horizon evaluations over a 10,000-token test horizon demonstrate zero syntactic drift or containment violations.
 
 | Metric | Base Model | Masked Engine |
 | :--- | :---: | :---: |
