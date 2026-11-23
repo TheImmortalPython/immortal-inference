@@ -81,7 +81,7 @@ immortal-inference/
 ├── LICENSE-COMMERCIAL.md  # Commercial License Exception & AGPLv3 Waiver
 ├── PKLM_10k_Horizon_B...  # 10k-token long-horizon benchmark telemetry dataset
 ├── PRICING-TIERS.md       # Enterprise Commercial Pricing & Licensing Tiers
-├── README.md              # Project overview, architecture, & Section 13 notice
+├── README.md              # Repository entry point
 ├── SECURITY.md            # Security policy & vulnerability reporting guidelines
 ├── SOVEREIGN_EXCEPTION.md # Public Sector & Critical Infrastructure Safe Harbor
 ├── TIP_Logo_Square.jpg    # TheImmortalPython Labs logo
