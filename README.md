@@ -106,7 +106,7 @@ To utilize `immortal-inference` in proprietary, closed-source, or SaaS environme
 
 ---
 
-*Note: All software assets, source code repositories, and commercial licenses are offered strictly on an **as-is** basis as self-service intellectual property acquisitions. Transactions convey rights to the technology asset and codebase only; they do not include ongoing consulting services, custom engineering implementations, software-level support desks, or managed engineering deployments.*
+*Note: All software assets, source code repositories, and commercial licenses are offered strictly on an as-is, non-refundable basis as self-service intellectual property transactions. All sales are final and convey rights to the technology asset and codebase only—without warranties of any kind. Purchases do not include ongoing consulting services, custom engineering, technical support, or managed deployments.*
 
 ---
 
